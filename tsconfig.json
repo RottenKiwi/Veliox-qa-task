@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "ES2020", // Set ECMAScript version
+        "module": "commonjs", // CommonJS module system
+        "strict": true, // Enable strict type-checking options
+        "esModuleInterop": true, // For better interoperability with CommonJS modules
+        "skipLibCheck": true, // Skip type checking of declaration files
+        "forceConsistentCasingInFileNames": true, // Ensure consistent file name casing
+        "outDir": "./dist", // Output directory for compiled files
+        "rootDir": "./" // Root directory of TypeScript files
+    },
+    "include": [
+        "tests/**/*.ts" // Path to your test files inside tests/
+    ],
+    "exclude": [
+        "node_modules" // Exclude node_modules directory
+    ]
+}
