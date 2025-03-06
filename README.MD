@@ -13,11 +13,16 @@ This project demonstrates an automated test for verifying the functionality of t
 ## Project Structure
 
 ├── config.ts        # Configuration file for sensitive data
+
 ├── helpers.ts       # Helper functions for random delays and text localization
+
 ├── logger.ts        # Logger utility for consistent logging
+
 ├── package.json     # Project dependencies and scripts
+
 ├── tests/           # Directory containing test scripts
 │   └── excel-online-test.ts  # Main test script
+
 └── tsconfig.json    # TypeScript configuration file
 
 ## Key Files
