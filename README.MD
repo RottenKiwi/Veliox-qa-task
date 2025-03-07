@@ -1,29 +1,26 @@
 # Excel Online Test Automation
 
-This project demonstrates an automated test for verifying the functionality of the `TODAY()` function in Excel Online using Playwright and TypeScript. The test simulates logging into Excel Online, entering the `TODAY()` function in the formula bar, and comparing the returned date with the system's current date.
+This project demonstrates an automated test for verifying the functionality of the TODAY() function in Excel Online using Playwright and TypeScript. The test simulates logging into Excel Online, entering the TODAY() function in the formula bar, and comparing the returned date with the system's current date.
 
 ## Features
 
-- Automated login to Excel Online.
-- Input and evaluate the `TODAY()` function in a new blank workbook.
-- Extract the displayed date and compare it with the system's date.
+- Automated login to Excel Online using Playwright.
+- Input and evaluate the TODAY() function in a new blank workbook.
+- Extract the displayed date and compare it with the system's current date.
 - Handle dynamic elements and popups.
 - Supports English and Hebrew languages for UI localization.
+- Uses random delays to simulate human-like interactions.
 
 ## Project Structure
-
-├── config.ts        # Configuration file for sensitive data
-
-├── helpers.ts       # Helper functions for random delays and text localization
-
+```
+├── config.ts        # Configuration file for sensitive data (e.g., credentials, language)
+├── helpers.ts       # Helper functions for random delays, text localization, and date parsing
 ├── logger.ts        # Logger utility for consistent logging
-
 ├── package.json     # Project dependencies and scripts
-
 ├── tests/           # Directory containing test scripts
 │   └── excel-online-test.ts  # Main test script
-
 └── tsconfig.json    # TypeScript configuration file
+```
 
 ## Key Files
 
@@ -34,9 +31,10 @@ The `logger.ts` file provides a simple utility for logging messages with timesta
 ### `helpers.ts`
 
 The `helpers.ts` file contains utility functions that are used throughout the project. It includes:
-- `randomDelay(min: number, max: number)`: Generates a random delay between `min` and `max` milliseconds to simulate human-like actions during the test.
-- `getLocalizedText()`: Returns localized text for UI elements based on the current language setting (either English or Hebrew).
-- `parseDateFromAriaLabel(ariaLabel: string)`: Extracts and formats the date from the `aria-label` attribute of a specific Excel Online element.
+- randomDelay(min: number, max: number): Generates a random delay between min and max milliseconds to simulate human-like actions during the test.
+- getLocalizedText(): Returns localized text for UI elements based on the current language setting (either English or Hebrew).
+- parseDateFromAriaLabel(ariaLabel: string): Extracts and formats the date from the aria-label attribute of a specific Excel Online element.
+- formatDateWithLeadingZeros(date: Date): Formats the given date in MM/DD/YYYY format, ensuring leading zeros are included.
 
 These functions can be extended in the future to add more helper methods, such as additional text localization for other languages, more complex delay logic, or more date parsing functions to handle different date formats.
 
@@ -60,11 +58,11 @@ These functions can be extended in the future to add more helper methods, such a
 4.	Run the test:
 
    ```bash
-    npx ts-node tests/excel-online-test.ts  
+    npx playwright test  
    ```
 
 ## Future Improvements
-	•	Extend the logger to support different log levels (e.g., info, warning, error).
-	•	Add more helper functions for handling additional UI elements and test scenarios.
-	•	Implement support for other languages in the getLocalizedText function.
-	•	Improve error handling and reporting in the test script.
+	*	Extend the logger to support different log levels (e.g., info, warning, error).
+	*	Add more helper functions for handling additional UI elements and test scenarios.
+	*	Implement support for other languages in the getLocalizedText function.
+	*	Improve error handling and reporting in the test script.

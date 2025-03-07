@@ -4,7 +4,7 @@
   "description": "Excel Online TODAY() function test automation",
   "main": "src/excel-online-test.ts",
   "scripts": {
-    "test": "ts-node src/excel-online-test.ts"
+    "test": "playwright test"
   },
   "dependencies": {
     "playwright": "^1.19.0",
@@ -12,5 +12,8 @@
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "ts-node": "^10.0.0",
     "typescript": "^4.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.0"
   }
 }

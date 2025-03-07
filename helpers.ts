@@ -40,3 +40,11 @@ export function parseDateFromAriaLabel(ariaLabel: string): string | null {
     // Extension Idea 2: Add localization support for date formats (e.g., using `Intl.DateTimeFormat`).
     // Extension Idea 3: Provide options for different date parsing strategies (e.g., strict vs. lenient matching).
 };
+
+// Helper function to format the date as MM/DD/YYYY with leading zeros
+export function formatDateWithLeadingZeros(date: Date) {
+    const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-indexed, so we add 1
+    const day = date.getDate().toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${month}/${day}/${year}`;
+}
